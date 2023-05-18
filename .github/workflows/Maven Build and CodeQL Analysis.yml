@@ -59,5 +59,3 @@ jobs:
              name: Schedular-UI
              path: target/schedulerui-v1.0.war        
              
-             
-        
