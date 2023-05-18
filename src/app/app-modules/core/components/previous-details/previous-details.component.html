@@ -1,0 +1,38 @@
+<div>
+  <div class="title info">
+    <h4>{{ input.title }}</h4>
+    <button class="pull-right close-btn" (click)="closeDialog()" md-icon-button>
+      <md-icon class="md-24">{{currentLanguageSet?.close}}</md-icon>
+    </button>
+  </div>
+
+  <section class="message">
+    <md-input-container>
+      <input autocomplete="off" mdInput placeholder="{{currentLanguageSet?.inTableSearch}}" #filterTerm (keyup)="filterPreviousData(filterTerm.value)">
+      <md-icon mdSuffix>search</md-icon>
+    </md-input-container>
+    <section class="table-responsive vw100">
+      <table [md2Data]="filteredDataList" #md2="md2DataTable" [rowsPerPage]="5" [activePage]="1" class="table table-striped">
+        <caption></caption>  <!-- Table discription SonarQube bug fix -->
+        <thead>
+          <tr class="column">
+            <th id="columnName" *ngFor="let column of columnList">{{ column.columnName }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of md2.data">
+            <td *ngFor="let column of columnList">{{ data[column.keyName] }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td [attr.colspan]="columnList.length">
+              <md2-pagination></md2-pagination>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+  </section>
+</div>

@@ -1,0 +1,25 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <h4>{{currentLanguageSet?.totalConsultationReport}}</h4>
+</div>
+
+<div class="m-b-10">
+  <form [formGroup]='totalConsultationForm'>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <md2-datepicker [openOnFocus]="true" type="month" class="width100" placeholder='{{currentLanguageSet?.fromDate}}' name='fromDate' id='fromDate' formControlName='fromDate'
+        ng-readonly="true" (change)='checkEndDate()' [max]='maxEndDate' required>
+      </md2-datepicker>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <md2-datepicker [openOnFocus]="true" type="month" class="width100" placeholder='{{currentLanguageSet?.toDate}}' name='toDate' id='toDate' formControlName='toDate'
+        ng-readonly="true" [min]='minEndDate' [max]='maxEndDate' required>
+      </md2-datepicker>
+    </div>
+
+  </form>
+</div>
+
+<div class="m-t-20 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <button md-raised-button class="pull-right" color="accent" type="submit" [disabled]="!totalConsultationForm.valid" (click)='downloadReport(true)'>{{currentLanguageSet?.download}}</button>
+</div>
