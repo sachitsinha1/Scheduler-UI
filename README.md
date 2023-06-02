@@ -16,9 +16,9 @@ It acts as an interface between client and the scheduling services provided, all
 ## Build
 -name: Build with NPM and Maven
 run:
-npm install -g @angular/cli
-npm install typescript@2.7.2 --save-dev
-npm install
-npm run build
-mvn clean install
+* npm install -g @angular/cli
+* npm install typescript@2.7.2 --save-dev
+* npm install
+* npm run build
+* mvn clean install
 
