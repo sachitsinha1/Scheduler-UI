@@ -8,3 +8,17 @@ It acts as an interface between client and the scheduling services provided, all
 * Provides slots availability
 * provides specialists availability of any day
 
+## Prerequisite
+* Java 1.8
+* maven
+* node 16
+
+## Build
+-name: Build with NPM and Maven
+run:
+npm install -g @angular/cli
+npm install typescript@2.7.2 --save-dev
+npm install
+npm run build
+mvn clean install
+
