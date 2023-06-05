@@ -22,3 +22,6 @@ run:
 * npm run build
 * mvn clean install
 
+## Run
+* npm start
+
